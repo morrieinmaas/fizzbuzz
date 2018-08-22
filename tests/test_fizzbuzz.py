@@ -1,5 +1,7 @@
 import unittest
-from fizzbuzz import FizzBuzz
+import fizzbuzz
+from fizzbuzz import fizzbuzz
+from fizzbuzz.fizzbuzz import FizzBuzz
 
 import unittest
 
