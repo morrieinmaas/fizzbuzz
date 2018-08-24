@@ -1,3 +1,5 @@
+import argparse
+
 class FizzBuzz:
     """
         This class implements FizzBuzz.
@@ -16,8 +18,6 @@ class FizzBuzz:
                 self.current = start
                 self.end = end
 
-    def __iter__(self):
-        return self
     
     def fizz_buzz(self):
         while self.current <= self.end:
@@ -34,3 +34,22 @@ class FizzBuzz:
                 
     def __iter__(self):
         return self.fizz_buzz()
+
+
+def main():
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-s", "--start", type=int, required=True,
+                        help="starting point")
+    parser.add_argument("-e", "--end", type=int, default=None,
+                        help="endpoint")
+    args = parser.parse_args()
+
+    f = FizzBuzz(args.start, args.end)
+
+    for i in f:
+        print(i)
+
+if __name__ == "__main__":
+   main()
+

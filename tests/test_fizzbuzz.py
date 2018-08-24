@@ -1,9 +1,7 @@
 import unittest
-import fizzbuzz
-from fizzbuzz import fizzbuzz
+
 from fizzbuzz.fizzbuzz import FizzBuzz
 
-import unittest
 
 class FizzBuzzTest(unittest.TestCase):
     
@@ -45,6 +43,7 @@ class FizzBuzzTest(unittest.TestCase):
         for i in FizzBuzz(15, 15):
             res.append(str(i))
         self.assertEqual(res, expected_list)
-        
+
+
 if __name__ == '__main__':
     unittest.main()
