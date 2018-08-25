@@ -1,4 +1,7 @@
+#!/usr/bin/env python
+
 import argparse
+
 
 class FizzBuzz:
     """
@@ -12,24 +15,23 @@ class FizzBuzz:
         elif end is not None:
             assert isinstance(end, int), "end not an integer"
             if start > end: 
-                self.current = end
-                self.end = start
+                self.current = -start
+                self.end = -end
             else:
                 self.current = start
                 self.end = end
 
-    
     def fizz_buzz(self):
         while self.current <= self.end:
             
-            if (self.current) % 15 == 0:
+            if self.current % 15 == 0:
                 yield 'FizzBuzz'
-            elif (self.current) % 5 == 0:
+            elif self.current % 5 == 0:
                 yield 'Buzz'
-            elif (self.current) % 3 == 0:
+            elif self.current % 3 == 0:
                 yield 'Fizz'
             else:
-                yield str( self.current)
+                yield str(abs(self.current))
             self.current += 1   
                 
     def __iter__(self):
@@ -49,7 +51,4 @@ def main():
 
     for i in f:
         print(i)
-
-if __name__ == "__main__":
-   main()
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import unittest
 
 from fizzbuzz.fizzbuzz import FizzBuzz
@@ -22,7 +24,7 @@ class FizzBuzzTest(unittest.TestCase):
         for i in FizzBuzz(3):
             res.append(str(i))
         self.assertEqual(res, ['1', '2', 'Fizz'])
-    
+
     def test_fizz_start_end(self):
         res = []
         expected_list = ['Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
@@ -35,7 +37,7 @@ class FizzBuzzTest(unittest.TestCase):
         expected_list = ['Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
         for i in FizzBuzz(15, 10):
             res.append(str(i))
-        self.assertEqual(res, expected_list)
+        self.assertEqual(res, expected_list[::-1])
     
     def test_fizz_end_equal_start(self):
         res = []
